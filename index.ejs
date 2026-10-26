@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Student Registration</h1>
+    <br />
+    <form action="/register" method="POST">
+      <label for="name">Full Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your full name"
+        required
+      />
+      <br /><br />
+
+      <label for="Gender">Gender:</label>
+      <br />
+      <input type="radio" name="Gender" id="male" value="Male" required />
+      <label for="male">Male</label>
+      <br />
+      <input type="radio" name="Gender" id="female" value="Female" />
+      <label for="female">Female</label>
+      <br />
+      <input type="radio" name="Gender" id="others" value="Others" />
+      <label for="others">Others</label>
+      <br />
+
+      <br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+      <br /><br />
+
+      <label for="password">Create Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        minlength="8"
+        required
+      />
+      <br /><br />
+
+      <label for="confirmpassword">Re-enter Password:</label>
+      <input
+        type="password"
+        id="confirmpassword"
+        name="confirmpassword"
+        placeholder="Re-enter your password"
+        minlength="8"
+        required
+      />
+      <br /><br />
+
+      <label for="Mobile">Mobile Number:</label>
+      <input
+        type="tel"
+        id="Mobile"
+        name="Mobile"
+        pattern="[0-9]{10}"
+        title="Enter a 10-digit mobile number"
+        required
+      />
+      <br /><br />
+
+      <label for="alternate">Alternate Number:</label>
+      <input
+        type="tel"
+        id="alternate"
+        name="alternate"
+        pattern="[0-9]{10}"
+        title="Enter a 10-digit mobile number"
+      />
+      <br /><br />
+
+      <label for="Course">Select Your Course:</label>
+
+      <select name="Course" id="Course" required>
+        <option value="">Select a Course</option>
+        <option value="Java Full Stack">Java Full Stack</option>
+        <option value="Python Full Stack">Python Full Stack</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Manual Testing">Manual Testing</option>
+        <option value="Power BI">Power BI</option>
+        <option value="API Testing">API Testing</option>
+      </select>
+
+      <br /><br />
+
+      <button type="submit">submit</button>
+      <button type="reset">Reset</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", function (event) {
+        const password = document.getElementById("password").value;
+        const confirmpassword =
+          document.getElementById("confirmpassword").value;
+
+        if (password !== confirmpassword) {
+          event.preventDefault();
+          alert("Passwords do not match.");
+        }
+      });
+    </script>
+  </body>
+</html>
